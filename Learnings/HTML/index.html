@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<<<<<<< HEAD
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align:center;
+      }
+      td{
+        border-style: dashed;
+      }
+    </style>
+</head>
+<body>
+    <h2>Table Borders</h2>
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Bob</td>
+    <td>David</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Alice</td>
+    <td>John</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+</table>
+    <h2>Form 1: Contact Form</h2>
+    <form  autocomplete="on" >
+        <fieldset>
+            <legend>Contact Details</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required autocomplete="on"><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required ><br><br>
+            
+            <label for="topic">Topic:</label>
+            <input list="topics" id="topic" name="topic">
+            <datalist id="topics">
+                <option value="General Inquiry">
+                <option value="Support">
+                <option value="Feedback">
+            </datalist><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <h2>Form 2: Registration Form</h2>
+    <form >
+        <fieldset>
+            <legend>Registration Details</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="Pavi" readonly ><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required ><br><br>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"  required ><br><br>
+            
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" autofocus> <label for="female">Female</label><br><br>
+            
+            <label for="terms">Accept Terms:</label>
+            <input type="checkbox" id="terms" name="terms" required> <label for="terms">I agree</label><br><br>
+            
+            <input type="image" src="fruit.jpeg" alt="fruit-image">
+        </fieldset>
+    </form>
+    <h2>Form 3: Feedback Form</h2>
+    <form >
+        <fieldset>
+            <legend>Feedback</legend>
+            <label for="name_feedback">Name:</label>
+            <input type="text" id="name_feedback" name="name" required><br><br>
+            <label for="rating">Rating:</label>
+            <select id="rating" name="Rating" size="3">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <label for="feedback">feedback:</label>
+            <select id="feedback" name="rating" >
+                <option value="Good" >Good</option>
+                <option value="Not satisfied">Not satisfied</option>
+                <option value="Need improvement" selected>Need improvement</option>
+            </select><br><br>
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+            <label>Gender</label><br>
+            <input type="checkbox" id="Male" name="Gender" value="male" autofocus>  <label for="Male">Male</label><br>
+            <input type="checkbox" id="female" name="Gender" value="Female"><label for="female">Female</label><br><br>
+            <label for="subscribe">Subscribe for Updates:</label>
+            <input type="checkbox" id="subscribe" name="subscribe"> <label for="subscribe">Mail</label>
+            <input type="checkbox" id="subscribe" name="subscribe"> <label for="subscribe">Message</label><br><br>
+            <input type="submit" value="Submit Feedback">
+        </fieldset>
+    </form>
+    <object width="300px" height="450px" data="demo.html"></object>
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding HTML Elements</title>
+    <style>
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            display: block;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding HTML</h1>
+    <h2>Introduction</h2>
+    <h3>What is HTML?</h3>
+    <p>HTML (HyperText Markup Language) is the standard language for creating webpages. It structures content using various elements.</p>
+    <p>Learn more about HTML on <a href="https://www.w3schools.com/html/">W3schools.com</a>.</p>
+
+    <h3>Common HTML Elements</h3>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Purpose</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>&lt;p&gt;</td>
+            <td>Defines a paragraph</td>
+            <td>&lt;p&gt;This is a paragraph&lt;/p&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;a&gt;</td>
+            <td>Creates a hyperlink</td>
+            <td>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;img&gt;</td>
+            <td>Displays an image</td>
+            <td>&lt;img src="image.jpg" alt="Sample"&gt;</td>
+        </tr>
+    </table>
+    
+    <h3>Why Learn HTML?</h3>
+    <ul>
+        <li>It is the foundation of web pages.</li>
+        <li>It helps structure content in a meaningful way.</li>
+        <li>It works with CSS and JavaScript to create interactive websites.</li>
+    </ul>
+
+    <h3>Basic Steps to Write HTML</h3>
+    <ol>
+        <li>Use &lt;!DOCTYPE html&gt; to declare the document type.</li>
+        <li>Wrap everything in &lt;html&gt; tags.</li>
+        <li>Use &lt;head&gt; for metadata and &lt;body&gt; for content.</li>
+        <li>Structure content using headings, paragraphs, images, and links.</li>
+    </ol>
+>>>>>>> 392e23305f74c27dbf00508384e2cd57bb7226e0
+</body>
+</html>

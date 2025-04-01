@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;;
+        }
+        .column{
+            float:left;
+           padding:15px;    
+        }
+        li{
+            list-style-type:none;
+            background-color:cadetblue;
+            padding:10px;
+            margin-bottom:7px;
+        }
+        .div1{
+        float:left;
+        border:2px solid blue;
+        }
+        .div2{
+            border:2px solid red;
+        }
+        .div3{
+            float: right;
+            border:2px solid blue;
+        }
+        .div4{
+            border:2px solid green;
+            clear:right;
+        }
+        .box{
+            float:left;
+           width:33.33%;
+           background-color: rgb(71, 69, 69);
+           height:100px;
+           color:white;
+           padding:20px;
+           margin: auto;
+        }
+        .clearfix{
+            content:"";
+            clear:both;
+            display:table;
+        }
+        .box1, .box2, .box3 {
+        width: 100px;
+        height: 75px;
+        margin-top: 5px;
+    }
+    .box1{
+        background-color: red;
+        top:10px;
+        width:70px;
+        position: relative;
+        animation: zigzag 5s linear infinite;
+        border-radius:100px;
+    }
+    .box2 {
+        background-color: yellow;
+        top:10px;
+        width:70px;
+        position: relative;
+  animation: zigzag 7s linear infinite;
+  border-radius:100px;
+    }
+
+    .box3 {
+        background-color: green;
+        top:10px;
+        width:70px;
+  animation: zigzag 9s infinite;
+  border-radius:100px;
+    }
+    .flex-container{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        background-color:rgb(167, 234, 234);
+    }
+    .flex-container >div{
+         background-color: white;
+         padding:20px;
+         margin:10px;
+    }
+    @keyframes zigzag{
+        0%{
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-30px );
+  }
+  50% {
+    transform: translateX(50vw) translateY(30px);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-30px);
+  }
+
+  100% {
+    transform: translateX(100vw) translateY(30px);
+  }
+    }
+    </style>
+</head>
+<body>
+    <div class="header" style="background-color:rgba(187, 176, 176, 0.807);height:100px;">
+        <h1 style="color:white;font-weight:bold;text-align:left;padding-top:25px">Chania</h1>
+    </div>
+    <div class="column" >
+         <ul>
+            <li>The Flight</li>
+            <li>The City</li>
+            <li>The Island</li>
+            <li>The Food</li>
+         </ul>
+    </div>
+    <br>
+    <div>
+        <h1>The City</h1>
+        <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+        <p>You will learn more about web layout and responsive web pages in a later chapter.</p>
+    </div>
+    <div class="footer">
+        <h3 style="background-color: rgba(187, 176, 176, 0.807);padding:15px;margin-top:70px;">Footer</h3>
+    </div>
+    <br>
+    
+   <div class="div1">div1</div>
+   <div class="div2">div2 - Notice that div2 is after div1 in the HTML code. However, since div1 floats to the left, the text in div2 flows around div1.</div>
+   <br><br>
+   <div class="div3">div3</div>
+   <div class="div4">div4 - Here, clear: right; moves div4 down below the floating div3. The value "right" clears elements floated to the right.</div>
+   <br><br>
+   <div class="box" style="background-color: rgb(110, 105, 105);">Some text inside the box</div>
+   <div class="box" style="background-color: rgb(50, 48, 48);">Some text inside the box</div>
+   <div class="box" style="background-color: black;">Some text inside the box</div>
+   <br><div class="clearfix">
+   <div class="box1 zigzag"></div>
+   <div class="box2 zigzag"></div>
+   <div class="box3 zigzag"></div>
+   <br>
+   <div style="border:2px solid black"><h1>Hello</h1></div>
+   <br>
+<h1> Flex Container</h1>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div> 
+  <div>5</div> 
+  <div>6</div> 
+</div>
+<br>
+
+<div class="flex-container" style="flex-wrap:wrap;justify-content:center">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>  
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>  
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>  
+</div>
+</body>
+</html>

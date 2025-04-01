@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table,th,td{
+                border:1px solid black;
+            }
+            .br{
+                border-radius:10px;
+            }
+            .navbar{
+                background-color: black;
+                overflow:hidden;
+            }
+            .navbar a{
+                display:block;
+                float:left;
+                color:white;
+                padding:20px 25px;
+            }
+            .navbar a:hover{
+                background-color:rgb(241, 175, 236);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML Table</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>College</th>
+            </tr>
+            <tr>
+                <td>Aruna</td>
+                <td>1</td>
+                <td>BIT</td>
+            </tr>
+            <tr>
+                <td>Pavi</td>
+                <td>2</td>
+                <td>CIT</td>
+            </tr>
+            <tr>
+                <td>udhaya</td>
+                <td>3</td>
+                <td>Anna University</td>
+            </tr>
+        </table>
+        <h1>Collapsed Table border</h1>
+        <table style="border-collapse:collapse;">
+            <tr>
+                <th style="border-collapse:collapse;">First Name</th>
+                <th style="border-collapse:collapse;">Last Name</th>
+                <th style="border-collapse:collapse;">Age</th>
+            </tr>
+            <tr>
+                <td style="border-collapse:collapse;">Jackson</td>
+                <td style="border-collapse:collapse;">smith</td>
+                <td style="border-collapse:collapse;">27</td>
+            </tr>
+            <tr >
+                <td style="border-collapse:collapse;">stephy</td>
+                <td style="border-collapse:collapse;">mano</td>
+                <td style="border-collapse:collapse;">25</td>
+            </tr>
+            <tr>
+                <td style="border-collapse:collapse;">udhaya</td>
+                <td style="border-collapse:collapse;">raja</td>
+                <td style="border-collapse:collapse;">22</td>
+            </tr>
+        </table>
+        <h1> Border Radius</h1>
+        <table class="br" style="width:100%;">
+            <thead>
+            <tr>
+                <th class="br">Name</th>
+                <th class="br">Roll No</th>
+                <th class="br">College</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="br">Aruna</td>
+                <td class="br">1</td>
+                <td class="br">BIT</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="br">Pavi</td>
+                <td class="br">2</td>
+                <td class="br">CIT</td>
+            </tr>
+        </tfoot>
+        </table>
+        <br>
+        <h1> Table with rowspan</h1>
+        <table width="100%">
+            <tr>
+                <th>Name</th>
+                <th rowspan="2">Age</th>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+            </tr>
+            <tr>
+                <td>David</td>
+                <td>28</td>
+            </tr>
+        </table>
+        <h1> Table with colspan</h1>
+        <table width="100%">
+            <tr>
+                <th colspan="2">Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>smith</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>David</td>
+                <td>23</td>
+            </tr>
+        </table>
+        <h1> Table with column width</h1>
+        <table width="100%">
+            <tr>
+                <th>Name</th>
+                <th style="width:75%;background-color:powderblue;">Dep</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td style="background-color:powderblue;">CSE</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td style="background-color:powderblue;">IT</td>
+                <td>23</td>
+            </tr>
+        </table>
+        <h1> Table with Row height</h1>
+        <table width="100%" >
+            <tr >
+                <th>Name</th>
+                <th >Dep</th>
+                <th>Age</th>
+            </tr>
+            <tr style="height:200px;background-color:rgb(183, 159, 215);">
+                <td>Jill</td>
+                <td >CSE</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td >IT</td>
+                <td>23</td>
+            </tr>
+        </table>
+        <h1>Vertical table header</h1>
+        <table width="100%">
+            <caption>Student details</caption>
+            <tr>
+                <th>Name</th>
+                <td>Aruna</td>
+                <td>pavi</td>
+            </tr>
+            <tr>
+                <th >Age</td>
+                <td>20</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <th>State</td>
+                <td>Tamil Nadu</td>
+                <td>Tamil Nadu</td>
+            </tr>
+        </table>
+        <h1>Cell padding and Cell spacing</h1>
+        <table width="100%" style="border-spacing:30px">
+            <caption>Student details</caption>
+            <tr>
+                <th>Name</th>
+                <td style="padding:15px">Aruna</td>
+                <td>pavi</td>
+            </tr>
+            <tr>
+                <th >Age</td>
+                <td style="padding:15px">20</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <th>State</td>
+                <td style="padding:15px"">Tamil Nadu</td>
+                <td>Tamil Nadu</td>
+            </tr>
+        </table>
+        </table>
+        <h1>Colgroup</h1>
+        <table width="75%">
+            <colgroup>
+                <col span="2" style="background-color:antiquewhite;">
+                <col span="3" style="background-color:pink;width:25%">
+                <col span="2" style="background-color:antiquewhite;">
+            </colgroup>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+        </table>
+        <br><br>
+     <div class="navbar" height="250px">
+            <a href="home.html">Home</a>
+            <a href="News.html">News</a>
+            <a href="Message.html">Message</a>
+            <a href="Dashboard.html">Dashboard</a>
+        </div>
+        <h1>ICC RANKINGS</h1>
+        <table style="background-color:black;color:white;" cellpadding="20">
+            <thead style="background-color: black;color:white;">
+                <tr>
+                    <th></th>
+                    <th>TEST</th>
+                    <th>ODI</th>
+                    <th>T201</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr>
+                    <td rowspan="2">Bat</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Best: 19</td>
+                    <td>Best: 1</td>
+                    <td>Best: 18</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Bowl</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;---<br>
+                    Best: 19</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Best: 19</td>
+                    <td>Best: 1</td>
+                    <td>Best: 18</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+  
+

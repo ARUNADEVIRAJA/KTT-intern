@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zigzag Text</title>
+<style>
+    .zigzag-text {
+  font-size: 20px;
+  font-weight: bold;
+  color:green;
+  position: relative;
+  animation: zigzag 5s linear infinite;
+width: 200px;
+margin-top: 100px;
+}
+
+@keyframes zigzag {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-30px );
+  }
+  50% {
+    transform: translateX(50vw) translateY(30px);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-30px);
+  }
+
+  100% {
+    transform: translateX(calc(100vw-200px)) translateY(30px);
+  }
+}
+</style>    
+</head>
+<body>
+    <div class="zigzag-text">zigzag text</div>
+</body>
+</html>

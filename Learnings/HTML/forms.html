@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align:center;
+      }
+      td{
+        border-style: dashed;
+      }
+    </style>
+</head>
+<body>
+    <h2>Table Borders</h2>
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Bob</td>
+    <td>David</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Alice</td>
+    <td>John</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+</table>
+    <h2>Form 1: Contact Form</h2>
+    <form  autocomplete="on" >
+        <fieldset>
+            <legend>Contact Details</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required autocomplete="on"><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required ><br><br>
+            
+            <label for="topic">Topic:</label>
+            <input list="topics" id="topic" name="topic">
+            <datalist id="topics">
+                <option value="General Inquiry">
+                <option value="Support">
+                <option value="Feedback">
+            </datalist><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    
+    <h2>Form 2: Registration Form</h2>
+    <form >
+        <fieldset>
+            <legend>Registration Details</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required ><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required ><br><br>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"  required ><br><br>
+            
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label><br><br>
+            
+            <label for="terms">Accept Terms:</label>
+            <input type="checkbox" id="terms" name="terms" required> <label for="terms">I agree</label><br><br>
+            
+            <input type="submit" value="Register">
+        </fieldset>
+    </form>
+    
+    <h2>Form 3: Feedback Form</h2>
+    <form >
+        <fieldset>
+            <legend>Feedback</legend>
+            <label for="name_feedback">Name:</label>
+            <input type="text" id="name_feedback" name="name" required><br><br>
+            
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" size="3">
+                <option value="1" >1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+            <label for="feedback">feedback:</label>
+            <select id="feedback" name="rating" >
+                <option value="Good" >Good</option>
+                <option value="Not satisfied">Not satisfied</option>
+                <option value="Need improvement" selected>Need improvement</option>
+            </select><br><br>
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+            
+            <label for="subscribe">Subscribe for Updates:</label>
+            <input type="checkbox" id="subscribe" name="subscribe"> <label for="subscribe">Mail</label>
+            <input type="checkbox" id="subscribe" name="subscribe"> <label for="subscribe">Message</label><br><br>
+            <input type="submit" value="Submit Feedback">
+        </fieldset>
+    </form>
+</body>
+</html>

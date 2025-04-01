@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .layout{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            border:1px solid black;
+        }
+        .header{
+            background-color:rgb(251, 154, 140);
+            border:1px solid black;
+            grid-column:span 3;
+        }
+        .sidebar1{
+            display:grid;
+            height:300px;
+            align-items:center;
+            justify-content:center;
+            background-color:rgb(251, 154, 140);
+            border:1px solid black;
+        }
+        .main{
+            display:grid;
+            height:300px;
+            align-items:center;
+            justify-content:center;
+            background-color:rgb(251, 154, 140);
+            border:1px solid black;
+        }
+        .sidebar2{
+            display:grid;
+            height:300px;
+            align-items:center;
+            justify-content:center;
+            background-color:rgb(251, 154, 140);
+            border:1px solid black;
+        }
+        .footer{
+            grid-column:span 3;
+            background-color:rgb(251, 154, 140);
+            border:1px solid black;
+        }
+        .container1{
+            display:grid;
+            grid-template-columns:auto auto auto;
+            grid-template-rows:100px 100px 100px;
+            gap:20px;
+            grid-auto-flow:column;
+        }
+        .container1 >div{
+            background-color:rgb(168, 168, 232);
+            display:grid;
+            align-items:center;
+            justify-content:center;
+            font-size:20px;
+            font-weight:bold;
+           
+        }
+        .container2{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows:100px 100px 100px;
+            background-color: blue;
+            gap:20px;
+            padding:20px;
+            grid-auto-rows:100px;
+        }
+        .container2 >div{
+            background-color:#fff;
+            display:grid;
+            align-items:center;
+            justify-content:center;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .item4{
+          grid-area: 1/2/span 3/span 1;
+        }
+        .hide{
+           
+            background-color:#e77d7d;
+            font-size:20px;
+            width:80%;
+            height:40px;
+           
+        }
+        @media screen and (max-width: 600px){
+            div.hide{
+                 display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+    <div class="header">
+        <h1 style="color:#000;text-align:center">Header</h1>
+    </div>
+    <div class="sidebar1"><h2>Sidebar1</h2></div>
+    <div class="main"><h2>Main Content</h2></div>
+    <div class="sidebar2"><h2>Sidebar2</h2></div>
+    <div class="footer"><h2 style="text-align:center;">footer</h2></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+<br>
+<br>
+<br>
+<div class="container2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div class="item4">4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+</div>
+<br>
+<h3>Hide elements on different screen sizes</h1>
+<br>
+<div class="hide">Example</div>
+<br>
+<p class="h2">h2 Bootstrap heading</p>
+<p class="h4">h4 Bootstrap heading</p> 
+<p class="h6">h6 Bootstrap heading</p> 
+<br>
+<p class="display-1">Display heading 1</p> 
+<p class="display-2">Display heading 2</p> 
+<p class="text-success">Green color text</p>
+<p class="text-danger">Red color text</p>
+<p class="text-warning">Yellow color text</p>
+<p class="text-primary ">Blue color text</p>
+<p class="text-light bg-dark">White color text</p>
+<p class="text-muted bg-info">Text with background colour</p>
+<div class="container">
+    <h1>Contact Form</h1>
+    <div class="row">
+        <div class="col">
+        <form>
+            <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control"></textarea>
+        </div>
+        <button class="btn btn-primary my-2">submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+<br>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">open modal</button>
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Successful!!!</h1>
+            </div>
+            <div class="modal-body">
+                you have successfully launched a bootstrap modal
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

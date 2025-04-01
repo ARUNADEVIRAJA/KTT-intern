@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Basics</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#entities">Entities</a></li>
+            <li><a href="#tables">Tables</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="entities">
+            <h2>HTML Entities</h2>
+            <p>Some commonly used HTML entities:</p>
+            <p>Copyright Symbol: &copy;</p>
+            <p>Registered Trademark: &reg;</p>
+            <p>Less than: &lt; and Greater than: &gt;</p>
+            <p>Ampersand: &amp;</p>
+        </section>
+        <section id="tables">
+            <h2>Tables</h2>
+            <h3>Simple Table</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>30</td>
+                </tr>
+            </table>
+            <h3>Table with Colspan</h3>
+            <table>
+                <tr>
+                    <th colspan="2">Full Name</th>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+            </table>
+            <h3>Table with Rowspan</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th rowspan="2">Age</th>
+                </tr>
+                <tr>
+                    <td>Charlie</td>
+                </tr>
+                <tr>
+                    <td>David</td>
+                    <td>28</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 HTML Basics</p>
+    </footer>
+</body>
+</html>
