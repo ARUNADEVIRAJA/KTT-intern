@@ -129,7 +129,7 @@ function showprimes(n){
       height: 182,
       width: 50
     }
-  };
+  }; 
   let clone1=Object.assign({},details);
   clone1.sizes.width=30;
   console.log(details.sizes.width);
