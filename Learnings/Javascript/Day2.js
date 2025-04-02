@@ -47,7 +47,7 @@ function showprimes(n){
       name: name,
       age: age
     }
-  }
+  }  
   let userdetails=makeuser("john",20);
   console.log(userdetails);*/
   function makeuser(name,age){
