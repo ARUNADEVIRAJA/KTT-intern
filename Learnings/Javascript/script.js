@@ -114,98 +114,98 @@ console.log(Boolean("0"));
 console.log(Boolean(null));
 console.log(Boolean(undefined));
 
-function showMessage(){
-  let message="hello";
-  alert(message);
-}
-showMessage();
-let username="john";
-function display(){
-    let message="hello"+username;
-    alert(message);
-}
-display();
-let username1="john";
-function showMessage(){
-    username1="bob";
-    alert(username1);
-}
-alert(username1);
-showMessage();
-alert(username1);
-function showMessage(from,text="no text given")
-{
-    alert(from+":"+text);
-}
-showMessage("Ann");
-function showMessage(from,text="no text given")
-{
-    alert(from+":"+text);
-}
-showMessage("Ann","bob");
-function checkAge(age3) {
-  if (age3 >= 18) {
-    return true;
-  } else {
-    return confirm('Do you have permission from your parents?');
-  }
-}
+// function showMessage(){
+//   let message="hello";
+//   alert(message);
+// }
+// showMessage();
+// let username="john";
+// function display(){
+//     let message="hello"+username;
+//     alert(message);
+// }
+// display();
+// let username1="john";
+// function showMessage(){
+//     username1="bob";
+//     alert(username1);
+// }
+// alert(username1);
+// showMessage();
+// alert(username1);
+// function showMessage(from,text="no text given")
+// {
+//     alert(from+":"+text);
+// }
+// showMessage("Ann");
+// function showMessage(from,text="no text given")
+// {
+//     alert(from+":"+text);
+// }
+// showMessage("Ann","bob");
+// function checkAge(age3) {
+//   if (age3 >= 18) {
+//     return true;
+//   } else {
+//     return confirm('Do you have permission from your parents?');
+//   }
+// }
 
-let age3 = prompt('How old are you?', 18);
+// let age3 = prompt('How old are you?', 18);
 
-if ( checkAge(age3) ) {
-  alert( 'Access granted' );
-} else {
-  alert( 'Access denied' );
-}
-console.log(age3);
-function displayres(){
-  outer : for(let i=0;i<3;i++){
-  for(let j=0;j<3;j++){
-      if(i==0 && j==2){
-          break outer;
-      }
-      else{
-          alert(`the value of (${i},${j})`);
-      }
-  }
-  }
-}
-  displayres();
-  function sayhi(){
-    alert("hello");
-}
-let func=sayhi;
-func();
-sayhi();
-let result=(a,b)=>a+b;
-alert(result(4,8));
-let age=prompt("enter your age");
-let welcome=(age<18)?
-    ()=>alert("hello"):
-    ()=>alert("Greetings");
-welcome();
-let ques=(question,yes,no)=>{
-  if(confirm(question)){
-      yes();
-  }
-  else{
-      no();
-  }
-};
-ques("do you agree",function(){ alert("you agreed");},
-  function() {alert("you canceled the execution");} );
-  alert(0==" ");
-  let a=5;
-let b=5;
-alert(a===b);
-alert("aruna"<="partha");
-function displayres(){
-  alert("hello");
-}
-let res=displayres();
-let s=0;
-if(res==undefined){
-  s=1;
-}
-console.log(s);
+// if ( checkAge(age3) ) {
+//   alert( 'Access granted' );
+// } else {
+//   alert( 'Access denied' );
+// }
+// console.log(age3);
+// function displayres(){
+//   outer : for(let i=0;i<3;i++){
+//   for(let j=0;j<3;j++){
+//       if(i==0 && j==2){
+//           break outer;
+//       }
+//       else{
+//           alert(`the value of (${i},${j})`);
+//       }
+//   }
+//   }
+// }
+//   displayres();
+//   function sayhi(){
+//     alert("hello");
+// }
+// let func=sayhi;
+// func();
+// sayhi();
+// let result=(a,b)=>a+b;
+// alert(result(4,8));
+// let age=prompt("enter your age");
+// let welcome=(age<18)?
+//     ()=>alert("hello"):
+//     ()=>alert("Greetings");
+// welcome();
+// let ques=(question,yes,no)=>{
+//   if(confirm(question)){
+//       yes();
+//   }
+//   else{
+//       no();
+//   }
+// };
+// ques("do you agree",function(){ alert("you agreed");},
+//   function() {alert("you canceled the execution");} );
+//   alert(0==" ");
+//   let a=5;
+// let b=5;
+// alert(a===b);
+// alert("aruna"<="partha");
+// function displayres(){
+//   alert("hello");
+// }
+// let res=displayres();
+// let s=0;
+// if(res==undefined){
+//   s=1;
+// }
+// console.log(s);
