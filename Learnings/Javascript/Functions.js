@@ -32,7 +32,7 @@ function showprimes(n){
   let fruit="apple";
   // let bag={
   //   [fruit]:5
-  // };
+  // };     
   let bag={
     [fruit+"computers"]:5
   }
