@@ -24,9 +24,9 @@ function showprimes(n){
   user2.isAdmin=true;
   user2.name="Alice";
   user2.age=23;
-  console.log(user.age);
-  delete user.age;
-  console.log(user.age);
+  console.log(user2.age);
+  delete user2.age;
+  console.log(user2.age);
   user2["does he like birds"]=true;
   console.log(user2["does he like birds"]);
   let fruit="apple";
@@ -164,3 +164,23 @@ function showprimes(n){
       }
     }
   } 
+  const user={
+    name:"john",
+    age:24
+  };
+  user.name="pete";
+  console.log(user.name);
+  let clonedobj={};
+  for(let key in user){
+    clonedobj[key]=user[key];
+  }
+  clonedobj.name="aruna";
+  console.log(user.name);
+  let permission1={canview:true};
+  let permission2={canedit:true};
+  Object.assign(user,permission1,permission2);
+  console.log(user.name);
+  console.log(user.canview);
+  console.log(user.canedit);
+  let cln=Object.assign({},{name:"aruna",age:20});
+  console.log(cln.age,cln.name);
