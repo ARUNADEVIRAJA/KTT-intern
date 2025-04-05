@@ -106,7 +106,7 @@ console.log(a.toString(2));
 console.log(123456..toString(36));
 
 console.log(1e500);
-
+         
 console.log(0.1+0.2==0.3);
 
 let sum=0.1+0.2;
