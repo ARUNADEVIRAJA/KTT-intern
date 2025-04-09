@@ -225,4 +225,3 @@ for(i=0;i<a1.length;i++){
 }
 a1.length=size;
 console.log(a1.length);
-
