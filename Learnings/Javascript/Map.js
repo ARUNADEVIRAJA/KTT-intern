@@ -287,3 +287,15 @@ let meetup = JSON.parse(str, function(key, value) {
 });
 
 console.log( meetup.date.getDate() );
+let users = [
+  { id: 1, name: "runadevi" },
+  { id: 2, name: "Asha" },
+  {id: 3,name:"Asha"} 
+];
+let names=users.map(u=>u.name);
+let user3 = users.find(u =>u.name.startsWith("A"));
+console.log(user3);
+user3=names.find(u=>u.startsWith("A"));
+console.log(user3);
+console.log(names);
+console.log(users);
