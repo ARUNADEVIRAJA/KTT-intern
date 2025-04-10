@@ -114,7 +114,7 @@ let user1={
     },
     sayBye:function(){
 
-    }
+    }      
 };
 console.log(user1.sayHi.name);
 console.log(user1.sayBye.name);
