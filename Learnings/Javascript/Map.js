@@ -272,7 +272,7 @@ let user2 = {
       isEditor: true
     }
   };
-  
+
  console.log(JSON.stringify(user2, null, 5));
 
 let numbers="[0,1,2,3,4]";
