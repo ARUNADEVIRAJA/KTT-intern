@@ -122,52 +122,5 @@ console.log(user1.sayBye.name);
 let array=[function(){}];
 console.log(array[0].name);
 
-const celsiusTemps = [0, 10, 20, 30];
-const fahrenheitTemps = celsiusTemps.map(celsius => (celsius * 9/5) + 32);
-
-console.log(fahrenheitTemps); 
 
 
-const userEmails = ['user1@example.com', 'user2@example.com', 'user3@example.com'];
-
-userEmails.forEach(email => {
-  sendWelcomeEmail(email);
-});
-
-function sendWelcomeEmail(email) {
-  console.log(`Welcome email sent to ${email}`);
-}
-
-const prices = [100, 50, 20, 75];
-
-prices.sort((a, b) => a - b);
-
-console.log(prices);
-
-const orders = [
-    { id: 1, item: 'Laptop' },
-    { id: 2, item: 'Phone' },
-    { id: 3, item: 'Tablet' }
-  ];
-  
-  const order = orders.find(order => order.id === 2);
-  
-  console.log(order); 
-
-  const users = [
-    { name: 'Alice', active: true },
-    { name: 'Bob', active: false },
-    { name: 'Charlie', active: true }
-  ];
-  
-  const activeUsers = users.filter(user => user.active);
-  
-  console.log(activeUsers);
-
-  const words = ['JavaScript', 'is', 'a', 'versatile', 'language'];
-
-const sentence = words.reduce((accumulator, currentValue) => {
-  return accumulator + ' ' + currentValue;
-}, '');
-
-console.log(sentence);
