@@ -248,4 +248,3 @@ class Car extends Vehicle {
 const mycar=new Car('Maruthi suzuki','celerio',2019,4);
 mycar.startEngine();
 mycar.openTrunk();
-
