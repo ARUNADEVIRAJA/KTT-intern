@@ -1,0 +1,144 @@
+const fs=require('fs');
+fs.readFile('hello.txt','utf8',(err,data)=>{
+    if(err){
+        throw err;
+    }
+    console.log('File says',data);
+});
+
+fs.writeFile('hello.txt','This is written using Node.js!',(err)=>{
+    if(err) throw err;
+    console.log('file wriiten successfully');
+});
+
+const stream=fs.createReadStream('hello.txt','utf-8');
+stream.on('data',(chunk)=>{
+    console.log('chunk:',chunk);
+});
+
+const writer=fs.createWriteStream('streamOutput.txt');
+writer.write('line1\n');
+writer.write('line2\n');
+writer.write('line3\n');
+writer.end('Done writing!\n');
+console.log('data written using stream');
+writer.on('finish',()=>{
+fs.readFile('streamOutput.txt','utf-8',(err,data)=>{
+    if(err) throw err;
+    console.log('file streamOutput.txt says'+data);
+});
+});
+
+// fs.mkdir('myFolder',(err)=>{
+//     if(err) console.log('Folder may already exist');
+//     else console.log('Folder created');
+// });
+
+fs.readdir('./',(err,data)=>{
+    if(err) throw err;
+    else console.log('Files and Folders in current directory:',data);
+});
+
+const http=require('http');
+const server=http.createServer((req,res)=>{
+    res.write("Hello from Node.js server!");
+    res.end();
+});
+server.listen(4000,()=>{
+    console.log("server running on http://localhost:4000");
+});
+
+const server1 = http.createServer((req, res) => {
+    res.writeHead(200,{ 'Content-Type': 'text/html' });
+    res.end('<h1>Hello HTML!</h1><p>This is a paragraph.</p>');
+  });
+  
+  server1.listen(3000, () => {
+    console.log('Server1 running at http://localhost:3000/home');
+  });
+
+
+  const server2=http.createServer((req,res)=>{
+    if(req.method==='GET' && req.url==='/'){
+        res.end('Home page-GET method');
+    }
+    else if(req.method==='POST' && req.url==='/submit'){
+         res.end("Form submitted - POST request");
+    }
+    else{
+        res.writeHead(404);
+        res.end("Not Found");
+    }
+  });
+  server2.listen(5000,()=>{
+    console.log('sever listening on http://localhost:5000');
+  });
+
+  const server3=http.createServer((req,res)=>{
+    if(req.url==='/'){
+        fs.readFile('../HTML/forms.html',(err,data)=>{
+            if(err){
+                res.writeHead(500);
+                res.end('Error loading file');
+            }
+            else{
+                res.writeHead(200,{'Content-Type':'text/html'});
+                res.end(data);
+            }
+        });
+    }
+    else{
+        res.writeHead(404);
+        res.end('page not found');
+    }
+  });
+
+  server3.listen(2000,()=>{
+    console.log("Server ststic HTML on http://localhost:2000");
+  });
+
+  const express=require('express');
+  const app=express();
+  const path=require('path');
+  app.use((req,res,next)=>{
+    console.log(`${req.method} ${req.url}`);
+    next();
+  });
+  app.use(express.static(path.join(__dirname, '../HTML')));
+
+  app.get('/',(req,res)=>{
+    res.send("hello from Express!");
+  });
+  app.post('/submit', (req, res) => {
+    res.send('POST: Form submitted');
+  });
+  
+  app.get('/about', (req, res) => {
+    res.send('GET: About Page');
+  });
+  app.listen(1000,()=>{
+    console.log('server running on http://localhost:1000');
+  });
+
+ console.log(path.extname('C:\Users\aruna\OneDrive\Documents\KTT-intern\Learnings\Javascript\Prototypes.js'));
+
+
+ const app1 = express();
+ 
+ app1.get('/', (req, res, next) => {
+   try {
+     throw new Error('Something went wrong in GET /');
+   } catch (err) {
+     next(err); 
+   }
+ });
+ 
+ app1.use((err, req, res, next) => {
+   console.error('Caught error:', err.message);
+   res.status(500).send('Server Error Occurred');
+ });
+ 
+ app1.listen(2500, () => {
+   console.log('Server running on http://localhost:2500');
+ });
+ 
