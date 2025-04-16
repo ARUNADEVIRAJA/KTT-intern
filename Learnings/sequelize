@@ -1,0 +1,117 @@
+
+const {Client}=require('pg');
+const con=new Client({
+    host:"localhost",
+    user:"postgres",
+    port:5432,
+    password:"aruna@476",
+    database:"demopost"
+})
+
+con.connect().then(()=>console.log("connected successfully"));
+ 
+con.query('select * from demotable',(err,res)=>{
+    if(!err){
+        console.log(res.rows)
+    }
+    else{
+        console.log(err.message)
+    }
+    con.end;
+})
+const update ='update demotable set name=$1 where id=$2';
+const values=['aruna',1];
+
+con.query(update,values,(err,result)=>{
+    if(err){
+        console.log('Error updating data',err)
+    }
+    else{
+        console.log(result.rows);
+    }
+});
+const {Sequelize,DataTypes}=require('sequelize');
+const sequelize=new Sequelize('demopost','postgres','aruna@476',{
+    host:'localhost',
+    dialect:'postgres'
+});
+
+async function testConnection(){
+try{
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+}catch(error){
+    console.error('unable to connect to the database',error.message);
+}
+}
+testConnection();
+const Student=sequelize.define('Student',{
+    firstName:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    lastname:{
+    type:DataTypes.STRING
+},
+    email:{
+        type:DataTypes.STRING,
+        unique:true,
+        primaryKey:true
+    }
+},
+{
+   
+});
+
+async function insertval(){
+    await Student.create({
+        firstName:"Aruna",
+        lastname:"Raja",
+        email:"aruna@example.com"
+    });
+    await Student.create({
+        firstName:"Pavi",
+        lastname:"Manokar",
+        email:"pavi@example.com"
+    });
+    console.log("Data inserted");
+}
+
+
+async function init(){
+    try{
+        await sequelize.sync();
+        console.log("Student table synced.");
+        await insertval();
+    }
+    catch(error){
+        console.log('unable to connect or sync:', error.message);
+    }
+}
+init();
+
+async function res(){
+const students=await Student.findAll();
+console.log("ALL RECORDS",students);
+const rec1 = await Student.findOne({ where: { firstName: "Aruna" } });
+console.log("record1",rec1);
+const rec2=await Student.findByPk("aruna@example.com");
+console.log("record 2",rec2);
+await Student.update({firstName:"Arunadevi"},{where:{email:"aruna@example.com"}});
+const rec3=await Student.findOne({where:{firstName:"Arunadevi"}});
+rec3.lastname="R";
+await rec3.save();
+
+await Student.upsert({
+    firstName:"saru",
+    lastname:"hasan",
+    email:"saru@gmail.com"
+});
+const fullrec=await Student.findAll();
+console.log("full record",fullrec);
+// await Student.destroy({
+//     where:{email:"pavi@example.com"}
+// });
+}
+res();
+
