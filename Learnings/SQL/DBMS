@@ -29,3 +29,115 @@ CREATE TABLE CourseEnrollment (
     enrollment_date DATE,
     PRIMARY KEY (student_id, course_id)
 );
+
+SELECT name, current_emotions
+FROM public.person;
+
+create or replace function trg()
+returns trigger as $$
+declare 
+   user_record record;
+begin
+	for user_record in select * from "Users" loop
+		raise notice 'User ID: %',user_record.id;
+	end loop;
+	return new;
+	
+end;
+$$ language plpgsql;
+
+
+create trigger trg 
+after insert on person 
+for each row
+execute function trg();
+
+insert into person values('siva','happy');
+
+create or replace procedure get_sqr(in num int,out res int) as $$
+begin
+	res:=num*num;
+end;
+$$ language plpgsql;
+
+call get_sqr(10,null);
+
+create or replace function add_num(a int,b int) returns int as $$
+begin
+	return a+b;
+end;
+$$ language plpgsql;
+
+select add_num(5,6);
+
+do $$
+declare 
+  counter int:=1;
+begin
+	loop
+		exit when counter>5;
+        raise notice 'counter: %',counter;
+        counter:=counter+1;
+    end loop;
+end $$;
+
+do $$
+begin
+	for cnt in 1..10 loop
+		raise notice 'cnt:%',cnt;
+	end loop;
+end; 
+$$
+
+   
+DO $$
+DECLARE
+    counter INT := 1;
+BEGIN
+    LOOP
+        RAISE NOTICE 'Counter: %', counter;
+        counter := counter + 1;
+        EXIT WHEN  counter<5;
+    END LOOP;
+END $$;
+
+
+create or replace function trg_1() returns trigger as $$
+
+begin
+	update person set current_emotions='neutral' where name='siva';
+    return new;
+end;
+$$ language plpgsql;
+
+create trigger trg_1 
+after delete on "VisitorLoggers"
+for each row 
+execute function trg_1();
+
+delete from "VisitorLoggers" where "firstName"='pooja';
+alter table person rename to "Person";
+alter table "Person" rename to person;
+
+
+explain analyze select * from person order by name;
+
+do $$
+declare counter int:=2;
+begin
+	loop
+		exit when counter>1;
+		raise notice 'counter value: %',counter;
+        counter:= counter-1;	
+	end loop;
+end;
+$$
+
+do $$
+declare user_records RECORD;
+begin
+	for user_records in select name,current_emotions from person loop
+		raise notice 'user name: %,user_emotion: %',user_records.name,user_records.current_emotions;
+     end loop;
+end $$;
+
