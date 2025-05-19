@@ -1,0 +1,86 @@
+SELECT * FROM public.account;
+
+delete from demotable;
+
+alter table demotable rename to account;
+
+alter table account drop name;
+
+alter table account add column balance numeric;
+
+insert into account values(1,200);
+insert into account values(2,500);
+insert into account values(3,400.48);
+
+/* commit */
+begin;
+update account set balance=balance-100 where id=3;
+update account set balance=balance+100 where id=2;
+commit;
+
+/* rollback */
+begin;
+update account set balance=balance-100 where id=1;
+rollback;
+
+/* savepoints */
+begin;
+update account set balance=balance+50 where id=1;
+savepoint sp1;
+update account set balance=balance+50 where id=3;
+rollback to savepoint sp1;
+insert into account values(4,790.56);
+commit;
+
+
+create table account(id int primary key,balance numeric);
+
+insert into account values(1,200),(2,400.50),(3,709.56);
+
+/* read commited transaction A */
+begin;
+set transaction isolation level read committed;
+select id,balance from account where id =3;
+update account set balance=balance-100 where id=3;
+select id,balance from account where id=3;
+commit;
+
+/* transaction B */
+begin;
+set transaction isolation level read committed;
+update account set balance=balance+50 where id=3;
+commit;
+
+/* repeatable read transaction A */
+begin;
+set transaction isolation level repeatable read;
+select balance from account where id=3;
+select balance from account where id=3;
+commit;
+
+/* transaction B */
+begin;
+set transaction isolation level repeatable read;
+update account set balance=balance+50 where id=3;
+commit;
+
+select sum(balance) from account;
+
+
+/*Serializable transaction A */
+begin;
+set transaction isolation level serializable;
+select sum(balance) from account;
+update account set balance = balance+100 where id=2;
+select sum(balance) from account;
+commit;
+
+/* transaction B */
+begin;
+set transaction isolation level serializable;
+insert into account values(6,200.00);
+commit;
+
+rollback;
+
+
